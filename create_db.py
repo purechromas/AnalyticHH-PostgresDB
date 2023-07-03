@@ -6,7 +6,7 @@ params = config()
 
 
 def create_database() -> None:
-    conn = psycopg2.connect(dbname='postgres', **params)
+    conn = psycopg2.connect(dbname="postgres", **params)
     conn.autocommit = True
     cur = conn.cursor()
 
@@ -15,12 +15,12 @@ def create_database() -> None:
     except Exception as e:
         print(f"DATABASE CAN'T BE DROPPED, SO WE ARE SKIPPING THAT | {e}")
     finally:
-        cur.execute('CREATE DATABASE hh;')
+        cur.execute("CREATE DATABASE hh;")
         print("DATABASE WAS SUCCESSFULLY CREATED!")
 
 
 def create_tables():
-    conn = psycopg2.connect(dbname='hh', **params)
+    conn = psycopg2.connect(dbname="hh", **params)
     conn.autocommit = True
     cur = conn.cursor()
 
