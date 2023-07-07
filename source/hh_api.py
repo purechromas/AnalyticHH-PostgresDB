@@ -17,6 +17,7 @@ class HHApi:
 
     @classmethod
     def get_vacancies(cls) -> list[dict[str:int or str or None]]:
+        """Parsing HH.RU for specific vacancies by employer_id"""
         params = {"only_with_salary": True, "per_page": 100}
         result = []
 
@@ -50,6 +51,7 @@ class HHApi:
 
     @classmethod
     def get_employers(cls) -> list[dict[str:int or str or None]]:
+        """Parsing HH.RU for specific employers by employer_id"""
         result = []
 
         for employer in cls.employers.values():

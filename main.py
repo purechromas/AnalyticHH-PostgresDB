@@ -11,13 +11,13 @@ def main() -> None:
     params_db = config()
     save_employers_to_db(employers_data, params=params_db)
     save_vacancies_to_db(vacancies_data, params=params_db)
-    # dbm = DBManager()
-    # print(dbm.get_all_vacancies())
-    # print(dbm.get_all_companies())
-    # print(dbm.get_vacancies_with_higher_salary())
-    # print(dbm.get_vacancies_with_key_word(key_word='Python'))
-    # print(dbm.get_avg_salary())
-    # print(dbm.get_companies_and_vacancies_count())
+    dbm = DBManager()
+    print(dbm.get_all_vacancies())
+    print(dbm.get_vacancies_with_higher_salary())
+    print(dbm.get_vacancies_with_key_word(key_word='Менеджер по продажам'))
+    print(dbm.get_avg_salary())
+    print(dbm.get_companies_and_vacancies_count())
+    dbm.disconnect()
 
 
 if __name__ == '__main__':
